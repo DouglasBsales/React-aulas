@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 import './index.css'
-import AppContador from './pages/AppContadorNumeros'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="w-full h-screen flex justify-center pt-[100px] bg-[#202020]">
-      <AppContador />
-    </div>
+    <App />
   </React.StrictMode>,
 )
