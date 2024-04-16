@@ -1,8 +1,11 @@
 import Challenge from "../components/Challenmge";
 import Events from "../components/Events";
 import FirstComponent from "../components/FirstComponent";
+import ListaRender from "../components/ListaRender";
 import MyComponent from "../components/MyComponent";
 import TemplateExpressions from "../components/TemplateExpressions";
+import TesteInput from "../components/TesteInput";
+
 
 export default function App() {
 
@@ -22,6 +25,12 @@ export default function App() {
         </div>
         <div>
           <Challenge />
+        </div>
+        <div>
+          <ListaRender />
+        </div>
+        <div>
+          <TesteInput />
         </div>
       </div>
     </>
