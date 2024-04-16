@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import AllNotes from "./Buttons/AllNotes";
 import MoonButton from "./Buttons/MoonButton";
 
