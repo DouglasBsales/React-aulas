@@ -1,4 +1,3 @@
-import React from "react"
 import {Moon } from "lucide-react";
 const MoonButton = ()=>{
     return (
