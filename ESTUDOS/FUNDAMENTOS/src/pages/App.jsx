@@ -1,14 +1,13 @@
 import Challenge from "../components/Challenmge";
+import Conditionalrender from "../components/ConditionalRender";
 import Events from "../components/Events";
 import FirstComponent from "../components/FirstComponent";
 import ListaRender from "../components/ListaRender";
 import MyComponent from "../components/MyComponent";
+import ShowUserName from "../components/ShowUserName";
 import TemplateExpressions from "../components/TemplateExpressions";
 
-
-
 export default function App() {
-
   return (
     <>
       <div className="flex flex-col items-center justify-center pt-20 gap-7">
@@ -20,15 +19,11 @@ export default function App() {
           <FirstComponent />
           <MyComponent />
         </div>
-        <div>
-          <Events />
-        </div>
-        <div>
-          <Challenge />
-        </div>
-        <div>
-          <ListaRender />
-        </div>
+        <Events />
+        <Challenge />
+        <ListaRender />
+        <Conditionalrender />
+        <ShowUserName name ="Douglas"/>
       </div>
     </>
   );
