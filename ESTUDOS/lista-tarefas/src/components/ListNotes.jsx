@@ -143,12 +143,12 @@ const ListNotes = () => {
         </div>
       </div>
 
-      <div className="w-[750px] h-screen flex flex-col items-start">
+      <div className="w-[750px] h-screen flex justify-center">
         <div className="w-full flex flex-col items-center pt-8 pr-4">
-          <div>{renderNotes()}</div>
+          <div className="">{renderNotes()}</div>
         </div>
 
-        <div className="w-full flex justify-end pt-4">
+        <div className="flex justify-end items-center pt-4 pb-[50px]">
           <button
             className="w-[50px] h-[50px] flex items-center justify-center rounded-full bg-[#2AB7CA] mr-2 cursor-pointer"
             onClick={handleClickOpenModal}
