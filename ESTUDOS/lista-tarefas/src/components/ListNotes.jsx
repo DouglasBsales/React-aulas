@@ -8,10 +8,10 @@ import "../components/ListNotes.css";
 
 const ListNotes = () => {
   const [selectedFocus, setSelectedFocus] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);;
   const [valueInputModal, setValueInputModal] = useState("");
   const [valueSearchNotes, setValueSearchNotes] = useState("");
-  const [mouseOverIndex, setMouseOverIconTrash] = useState("");
+  const [mouseOverId, setMouseOverIconTrash] = useState("");
   const [listaTarefas, setListaTarefas] = useState([
     { id: "134D23Ghg%1sad", tarefa: "Beber água" },
     { id: "1askjda$q3sd", tarefa: "Dormir" },
@@ -28,10 +28,11 @@ const ListNotes = () => {
 
   const handleClickOpenModal = () => {
     setIsModalOpen(true);
-  }
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    setValueInputModal("");
   };
 
   const handleCancelCloseModal = (event) => {
@@ -55,6 +56,7 @@ const ListNotes = () => {
 
     setListaTarefas([...listaTarefas, novaTarefa]);
     setValueInputModal("");
+    setValueSearchNotes("");
   };
 
   const handleCloseModalAddNotesOnEnter = (event) => {
@@ -67,18 +69,14 @@ const ListNotes = () => {
     setValueInputModal(e.target.value);
   };
 
-  const handleClickDeleteNote = (id) => {
-    setListaTarefas(listaTarefas.filter((elemento) => elemento.id !== id));
-  };
-
   const renderNotes = () => {
     return (
       <ListaRender
         listaTarefas={listaTarefas}
         value={valueSearchNotes}
-        mouseOverIndex={mouseOverIndex}
+        mouseOverId={mouseOverId}
         setMouseOverIconTrash={setMouseOverIconTrash}
-        handleClickDeleteNote={handleClickDeleteNote}
+        setListaTarefas={setListaTarefas}
       />
     );
   };
@@ -104,7 +102,7 @@ const ListNotes = () => {
           value={valueInputModal}
           handleChangeInput={handleChangeInput}
           handleCloseModalAddNotesOnEnter={handleCloseModalAddNotesOnEnter}
-          handleCloseModalAddNotes = {handleCloseModalAddNotes}
+          handleCloseModalAddNotes={handleCloseModalAddNotes}
           handleCloseModal={handleCloseModal}
         />
       )}

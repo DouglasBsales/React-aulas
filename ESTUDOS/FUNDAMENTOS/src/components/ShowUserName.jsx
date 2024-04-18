@@ -1,8 +1,9 @@
 
-const ShowUserName = (props) => {
+const ShowUserName = ({name, age}) => {
   return (
     <div>
-      <p>O nome do usuário é : {props.name}</p>
+      <p>O nome do usuário é : {name}</p>
+      <p>E tenho {age} anos de idade</p>
     </div>
   );
 };
