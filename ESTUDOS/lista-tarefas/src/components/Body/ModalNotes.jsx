@@ -9,10 +9,10 @@ const ModalNotes = ({
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
       <div
-        className="w-[400px] h-[300px] flex flex-col items-center justify-between fixed top-[117px] bg-white rounded-md"
+        className="w-[300px] lg:w-[450px] h-[300px] flex flex-col items-center justify-between fixed top-[117px] bg-white rounded-md"
         onKeyUp={handleCancelCloseModal}
       >
-        <div className="w-[360px] flex justify-center pt-5 ">
+        <div className="w-[290px] lg:w-[400px] flex justify-center pt-5 ">
           <div className="w-full flex flex-col items-center gap-6">
             <p className="text-2xl text-[#575757] font-semibold ">Nova nota</p>
             <input

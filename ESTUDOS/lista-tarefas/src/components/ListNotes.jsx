@@ -44,10 +44,10 @@ const ListNotes = () => {
   const handleCloseModalAddNotes = () => {
     const novaTarefa = {
       id: nanoid(),
-      tarefa: valueInputModal,
+      tarefa: valueInputModal.trim(),
     };
 
-    if (valueInputModal === "") {
+    if (valueInputModal.trim() === "") {
       alert("Adicione alguma tarefa");
       return;
     } else {

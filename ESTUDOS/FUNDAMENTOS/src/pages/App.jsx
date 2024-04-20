@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CarDetails from "../components/CarDetails";
 import Challenge from "../components/Challenmge";
 import Conditionalrender from "../components/ConditionalRender";
@@ -9,6 +10,8 @@ import ListaRender from "../components/ListaRender";
 import MyComponent from "../components/MyComponent";
 import ShowUserName from "../components/ShowUserName";
 import TemplateExpressions from "../components/TemplateExpressions";
+import Message from "../components/Message";
+import UsersDetails from "../components/UsersDetails";
 
 export default function App() {
   const cars = [
@@ -36,6 +39,18 @@ export default function App() {
     },
   ];
 
+  const [message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
+
+  const [users] = useState([
+    { id: "Gsd2376", nome: "Douglas", age: 25, prof: "Programador" },
+    { id: "jkasd%147sd", nome: "Rayelle", age: 18, prof: "Biomédica" },
+    { id: "16had83", nome: "Cláudio", age: 17, prof: "Ainda não tem" },
+  ]);
+
   return (
     <>
       <div className="flex flex-col items-center justify-center pt-20 gap-7">
@@ -54,6 +69,7 @@ export default function App() {
         <ShowUserName name="Douglas" age={27} newCar={false} />
         <CarDetails brand="Ford" color="Vermelho" km={0} newCar={true} />
         <CarDetails brand="Fiat" color="Branco" km={37000} newCar={false} />
+        
         {cars.map((car) => (
           <CarDetails
             brand={car.marca}
@@ -64,8 +80,18 @@ export default function App() {
         ))}
         <Fragments />
         <Container>
-           <p>Eu sou filho do componente</p>
+          <p>Eu sou filho do componente</p>
         </Container>
+        <Message msg={message} handleMessage={handleMessage} />
+
+        {users.map((elemento) => (
+          <UsersDetails
+            nome={elemento.nome}
+            age={elemento.age}
+            prof={elemento.prof}
+            id={elemento.id}
+          />
+        ))}
       </div>
     </>
   );
