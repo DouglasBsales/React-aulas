@@ -1,8 +1,25 @@
-# React + Vite
+# Gerenciamento de tarefas ( todolist)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação realizada para fixação de conhecimentos aprendidos <br>
+utilizando React!
 
-Currently, two official plugins are available:
+# 🔨 Funcionalidades do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Disponível tanto para desktop, tanto para celular
+O usuário consegue manipular suas tarefas de uma forma prática e interativa!
+com botoes para: adicionar e remover as tarefas
+Podemos elas serem selecionadas: 
+Uma a uma por vez
+Ou todas de uma vez
+Fica a critério do usuário. 
+Também existe a abertura de um modal com a opção de confirmação da <br>
+exclusao da tarefa, ou se deseja cancelar a mesma.
+
+# ✔️ Técnicas e tecnologias utilizadas
+REACT <br>
+JAVASCIPT <br>
+TAILWIND CSS
+
+
+# 📁 Acesso ao projeto
+# https://todolistdoug.vercel.app/
