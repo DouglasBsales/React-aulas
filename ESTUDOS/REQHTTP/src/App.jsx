@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const url = "http://localhost:3000/products"
+const url = "http://localhost:3000/products";
 // 4 CUSTOM HOOKS
 
 import { useFetch } from "./hooks/useFetch";
@@ -8,7 +8,7 @@ import { useFetch } from "./hooks/useFetch";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { dados: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
   const [valueName, setValueName] = useState("");
   const [valuePrice, setValuePrice] = useState("");
@@ -21,12 +21,18 @@ function App() {
       return;
     }
 
+    if (items.some((item) => item.name === valueName)) {
+      alert("Esse nome já existe");
+      return;
+    }
+
     const product = {
       name: valueName,
       price: valuePrice,
     };
 
-    const response = await fetch(url, {
+    {
+      /*const response = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(product),
@@ -38,6 +44,12 @@ function App() {
 
     const newProduct = await response.json();
     setProducts((prevProducts) => [...prevProducts, newProduct]);
+  */
+    }
+
+    // 5 REFATORANDO POST
+
+    httpConfig(product, "POST");
 
     setValueName("");
     setValuePrice("");
@@ -53,7 +65,7 @@ function App() {
     setProducts(products.filter((products) => products.id !== id));
   };
 
-  console.log(products);
+  console.log(items);
 
   return (
     <div className="flex flex-col items-center justify-center pt-12">
@@ -63,18 +75,19 @@ function App() {
 
       <div className="pt-32">
         <div className="flex flex-col gap-4">
-          {items && items.map((elemento) => (
-            <div key={elemento.id} className="flex gap-3">
-              <p>{elemento.name}</p>
-              <p>R$: {parseFloat(elemento.price).toFixed(2)}</p>
-              <button
-                className="border rounded-md  px-4"
-                onClick={() => handleDelete(elemento.id)}
-              >
-                <p>Delete</p>
-              </button>
-            </div>
-          ))}
+          {items &&
+            items.map((elemento) => (
+              <div key={elemento.id} className="flex gap-3">
+                <p>{elemento.name}</p>
+                <p>R$: {parseFloat(elemento.price).toFixed(2)}</p>
+                <button
+                  className="border rounded-md  px-4"
+                  onClick={() => handleDelete(elemento.id)}
+                >
+                  <p>Delete</p>
+                </button>
+              </div>
+            ))}
         </div>
       </div>
 

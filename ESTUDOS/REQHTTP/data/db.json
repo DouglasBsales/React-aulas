@@ -1,24 +1,49 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Camisa",
       "price": 59.9
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Calça vermelha",
       "price": 90
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Boné aba reta",
       "price": 29.9
     },
     {
-      "id": "43b5",
-      "name": "Guarda-chuva",
-      "price": "23.30"
+      "id": "b3d5",
+      "name": "Cabo USB-C iphone",
+      "price": "12"
+    },
+    {
+      "id": "5a54",
+      "name": "Caneta",
+      "price": "2.50"
+    },
+    {
+      "id": "1e2b",
+      "name": "Caneta",
+      "price": "2.50"
+    },
+    {
+      "id": "54fe",
+      "name": "Lápis",
+      "price": "1.50"
+    },
+    {
+      "id": "9a86",
+      "name": "Caderno",
+      "price": "5.60"
+    },
+    {
+      "id": "bb08",
+      "name": "Livro",
+      "price": "20.40"
     }
   ]
 }
